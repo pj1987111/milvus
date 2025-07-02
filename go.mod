@@ -288,7 +288,7 @@ require (
 
 replace (
 	github.com/apache/arrow/go/v17 => github.com/milvus-io/arrow/go/v17 v17.0.0
-	github.com/apache/pulsar-client-go => github.com/milvus-io/pulsar-client-go v0.12.1
+	github.com/apache/pulsar-client-go => github.com/adrian-wang/pulsar-client-go v0.0.0-20250610123031-2215f488384c
 	github.com/bketelsen/crypt => github.com/bketelsen/crypt v0.0.4 // Fix security alert for core-os/etcd
 	github.com/expr-lang/expr => github.com/SimFG/expr v0.0.0-20250513112851-9b981e8400b9
 	github.com/go-kit/kit => github.com/go-kit/kit v0.1.0
@@ -296,7 +296,7 @@ replace (
 	github.com/greatroar/blobloom => github.com/milvus-io/blobloom v0.0.0-20240603110411-471ae49f3b93
 	github.com/ianlancetaylor/cgosymbolizer => github.com/milvus-io/cgosymbolizer v0.0.0-20250318084424-114f4050c3a6
 	github.com/milvus-io/milvus/pkg/v2 => ./pkg
-	github.com/streamnative/pulsarctl => github.com/xiaofan-luan/pulsarctl v0.5.1
+	github.com/streamnative/pulsarctl => github.com/adrian-wang/pulsarctl v0.0.0-20250610124745-b6444ab65105
 	github.com/tecbot/gorocksdb => github.com/milvus-io/gorocksdb v0.0.0-20220624081344-8c5f4212846b // indirect
 )
 
