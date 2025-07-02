@@ -105,14 +105,14 @@ minio:
   # minio.accessKeyID and minio.secretAccessKey together are used for identity authentication to access the MinIO or S3 service.
   # This configuration must be set identical to the environment variable MINIO_ACCESS_KEY_ID, which is necessary for starting MinIO or S3.
   # The default value applies to MinIO or S3 service that started with the default docker-compose.yml file.
-  accessKeyID: minioadmin
+  accessKeyID: xxx
   # Secret key used to encrypt the signature string and verify the signature string on server. It must be kept strictly confidential and accessible only to the MinIO or S3 server and users.
   # Environment variable: MINIO_SECRET_ACCESS_KEY or minio.secretAccessKey
   # minio.accessKeyID and minio.secretAccessKey together are used for identity authentication to access the MinIO or S3 service.
   # This configuration must be set identical to the environment variable MINIO_SECRET_ACCESS_KEY, which is necessary for starting MinIO or S3.
   # The default value applies to MinIO or S3 service that started with the default docker-compose.yml file.
-  secretAccessKey: minioadmin
-  useSSL: false # Switch value to control if to access the MinIO or S3 service through SSL.
+  secretAccessKey: xxx
+  useSSL: true # Switch value to control if to access the MinIO or S3 service through SSL.
   ssl:
     tlsCACert: /path/to/public.crt # path to your CACert file
   # Name of the bucket where Milvus stores data in MinIO or S3.
@@ -1181,7 +1181,7 @@ trace:
     endpoint:  # example: "127.0.0.1:4317" for grpc, "127.0.0.1:4318" for http
     method:  # otlp export method, acceptable values: ["grpc", "http"],  using "grpc" by default
     secure: true
-    headers:  # base64
+    headers: xxx
   initTimeoutSeconds: 10 # segcore initialization timeout in seconds, preventing otlp grpc hangs forever
 
 #when using GPU indexing, Milvus will utilize a memory pool to avoid frequent memory allocation and deallocation.
