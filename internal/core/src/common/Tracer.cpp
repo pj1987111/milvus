@@ -70,7 +70,7 @@ initTelemetry(const TraceConfig& cfg) {
             auto headers_map = parseHeaders(cfg.otlpHeaders);
             if (!headers_map.empty()) {
                 for (const auto& pair : headers_map) {
-                    opts.headers.insert(std::pair<std::string, std::string>(pair.first, pair.second));
+                    opts.http_headers.insert(std::pair<std::string, std::string>(pair.first, pair.second));
                 }
             }
             exporter = otlp::OtlpHttpExporterFactory::Create(opts);
@@ -82,7 +82,7 @@ initTelemetry(const TraceConfig& cfg) {
             auto headers_map = parseHeaders(cfg.otlpHeaders);
             if (!headers_map.empty()) {
                 for (const auto& pair : headers_map) {
-                    opts.headers.insert(std::pair<std::string, std::string>(pair.first, pair.second));
+                    opts.metadata.insert(std::pair<std::string, std::string>(pair.first, pair.second));
                 }
             }
             opts.use_ssl_credentials = cfg.oltpSecure;
