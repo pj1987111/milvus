@@ -33,6 +33,7 @@ import (
 	"github.com/milvus-io/milvus/internal/allocator"
 	"github.com/milvus-io/milvus/internal/compaction"
 	"github.com/milvus-io/milvus/internal/datanode/compactor"
+	"github.com/milvus-io/milvus/internal/datanode/util"
 	"github.com/milvus-io/milvus/internal/flushcommon/io"
 	"github.com/milvus-io/milvus/internal/metastore/kv/binlog"
 	"github.com/milvus-io/milvus/internal/storage"
@@ -162,6 +163,7 @@ func (st *statsTask) PreExecute(ctx context.Context) error {
 		zap.Int64("collectionID", st.req.GetCollectionID()),
 		zap.Int64("partitionID", st.req.GetPartitionID()),
 		zap.Int64("segmentID", st.req.GetSegmentID()),
+		zap.Int64("storageVersion", st.req.GetStorageVersion()),
 		zap.Int64("preExecuteRecordSpan(ms)", preExecuteRecordSpan.Milliseconds()),
 		zap.Any("storageConfig", st.req.StorageConfig),
 	)
@@ -620,7 +622,7 @@ func buildIndexParams(
 	}
 
 	if req.GetStorageVersion() == storage.StorageV2 {
-		params.SegmentInsertFiles = GetSegmentInsertFiles(
+		params.SegmentInsertFiles = util.GetSegmentInsertFiles(
 			req.GetInsertLogs(),
 			req.GetStorageConfig(),
 			req.GetCollectionID(),
